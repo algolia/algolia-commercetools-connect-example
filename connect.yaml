@@ -1,0 +1,27 @@
+deployAs:
+  - name: transformer
+    applicationType: service
+    endpoint: /transform
+    scripts:
+      postDeploy: npm install && npm run connector:post-deploy
+      preUndeploy: npm install && npm run connector:pre-undeploy
+    configuration:
+      standardConfiguration:
+        - key: CTP_REGION
+          description: commercetools Composable Commerce API region
+          required: false
+          default: "europe-west1.gcp"
+        - key: CTP_PROJECT_KEY
+          description: commercetools Composable Commerce project key
+          required: false
+        - key: CTP_SCOPE
+          description: commercetools Composable Commerce client scope
+          required: false
+      securedConfiguration:
+        - key: CTP_CLIENT_ID
+          description: commercetools Composable Commerce client ID
+          required: false
+        - key: CTP_CLIENT_SECRET
+          description: commercetools Composable Commerce client secret
+          required: false
+
