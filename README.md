@@ -1,17 +1,30 @@
-<p align="center">
-  <a href="https://commercetools.com/">
-    <img alt="commercetools logo" src="https://unpkg.com/@commercetools-frontend/assets/logos/commercetools_primary-logo_horizontal_RGB.png">
-  </a></br>
-  <b>Connect Application Starter in JavaScript</b>
-</p>
+# Description
+This is an extension service that is called from the [algolia-commercetools-connector](https://github.com/algolia/algolia-commercetools-connector)
 
-This is the `starter` template to develop [connect applications](https://marketplace.commercetools.com/) in JavaSript.
+This is a commercetools connect app that has 1 app that's a service.  It's meant to be called remotely, passing in variants in order to transform them.
 
-## Instructions
+# Connector Properties
+The connector has the following properties to add when deploying the connector or installing it locally.
+All of the settings should match the settings in the [algolia-commercetools-connector](https://github.com/algolia/algolia-commercetools-connector)
 
-Use `create-connect-app` cli with `starter` as `template` value to download this template repository to build the integration application , folder structure needs to be followed to ensure certification & deployment from commercetools connect team as stated [here](https://github.com/commercetools/connect-application-kit#readme) 
+| Property Name | Description |
+| ------------- | ----------- |
+| CTP_CLIENT_ID | commercetools client ID, which is generated when you create an API Client in the Merchant Center |
+| CTP_CLIENT_SECRET | commercetools client secret, which is generated when you create an API Client in the Merchant Center |
+| CTP_REGION    | Region where the commercetools project is hosted.  Valid regions are us-central1.gcp, us-east-2.aws, europe-west1.gcp, eu-central-1.aws, australia-southeast1.gcp, cn-northwest-1.aws |
+| CTP_PROJECT_KEY | commercetools Composable Commerce project key |
+| CTP_SCOPE     | commercetools Composable Commerce client scope, for example manage_project:[CTP_PROJECT_KEY] |
 
-## Architecture principles for building an connect application 
+# Before you Begin
+To request access to Algolia Salesforce Connector  packages, please contact salesforce-algolia-solutions@algolia.com. Algolia offers the following packages, including service hours to assist with customization:
+* Merchant Center App
+* Event App
+* Front-end Component
+
+You will also need to [create a (free) Algolia account](https://www.algolia.com/users/sign_up) (if not already created).
+You can use Algolia with [Standard or Premium plans](https://www.algolia.com/pricing/), but some features are only available in the Premium plan.
+
+## Architecture principles for building or modifying this connect application 
 
 * Connector solution should be lightweight in nature
 * Connector solutions should follow test driven development. Unit , Integration (& E2E) tests should be included and successfully passed to be used
