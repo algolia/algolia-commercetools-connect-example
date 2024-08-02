@@ -15,6 +15,52 @@ All of the settings should match the settings in the [algolia-commercetools-conn
 | CTP_PROJECT_KEY | commercetools Composable Commerce project key |
 | CTP_SCOPE     | commercetools Composable Commerce client scope, for example manage_project:[CTP_PROJECT_KEY] |
 
+## Structure of the variant JSON
+The structure of the incoming list of variants is:
+```
+{
+    "articleNumberManufacturer": "J21 12059 885",
+    "articleNumberMax": "81145",
+    "matrixId": "M0E20000000ECBU",
+    "baseId": "81145",
+    "designer": "Jucca",
+    "madeInItaly": "yes",
+    "commonSize": "XXS",
+    "size": "34",
+    "color": "beige",
+    "colorFreeDefinition": "cream-blue",
+    "style": "sporty",
+    "gender": "Damen",
+    "season": "s15",
+    "prices": [
+        {
+            "price": 202.5,
+            "currency": "EUR"
+        },
+        {
+            "price": 132.79,
+            "currency": "EUR",
+            "customerGroup": "b2b"
+        },
+        {
+            "price": 174.96,
+            "currency": "EUR",
+            "country": "DE",
+            "channel": "SUNRISE Store Berlin"
+        }
+    ],
+    "image": "https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081145_1_medium.jpg",
+    "masterSku": "M0E20000000ECBU",
+    "objectID": "M0E20000000ECBU",
+    "name": "T-Shirt Jucca cream-blue",
+    "slug": "jucca-tshirt-12059-blue",
+    "description": "",
+    "categories": [
+        "Women > Clothing > T-shirts",
+        "Sale > Women"
+    ]
+}
+```
 # Before you Begin
 To request access to Algolia Salesforce Connector  packages, please contact salesforce-algolia-solutions@algolia.com. Algolia offers the following packages, including service hours to assist with customization:
 * Merchant Center App

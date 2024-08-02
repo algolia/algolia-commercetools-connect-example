@@ -2,6 +2,7 @@ import { apiSuccess } from '../api/success.api.js';
 import CustomError from '../errors/custom.error.js';
 import { logger } from '../utils/logger.utils.js';
 import { readConfiguration } from '../utils/config.utils.js';
+import { transform } from '../functions/transformer.js';
 
 /**
  * Exposed service endpoint.
@@ -22,7 +23,8 @@ export const post = async (request, response) => {
   
   logger.info(`transforming ${variants.length} variants`);
   for ( let i = 0;i < variants.length;i++ ) {
-    newVariants.push(variants[i]);
+    const newVariant = transform(variants[i]);
+    newVariants.push(newVariant);
   }
   const jsonResponse = {
     variants: newVariants
