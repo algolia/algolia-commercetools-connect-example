@@ -15,15 +15,14 @@ export const readConfiguration = () => {
     clientSecret: process.env.CTP_CLIENT_SECRET,
     projectKey: process.env.CTP_PROJECT_KEY,
     scope: process.env.CTP_SCOPE,
-    region: process.env.CTP_REGION,
-    applicationUrl: process.env.CONNECT_SERVICE_URL
+    region: process.env.CTP_REGION
   };
 
   const validationErrors = getValidateMessages(envValidators, envVars);
 
   if (validationErrors.length) {
     throw new CustomError(
-      'InvalidEnvironmentVariablesError',
+      400,
       'Invalid Environment Variables please check your .env file',
       validationErrors
     );

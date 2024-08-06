@@ -52,11 +52,6 @@ const envValidators = [
     referencedBy: 'environmentVariables',
   }),
 
-  standardUrl(['applicationUrl'], {
-    code: 'InvalidApplicationUrl',
-    message: 'Application URL is not specified.',
-    referencedBy: 'environmentVariables',
-  })
 ];
 
 export default envValidators;
