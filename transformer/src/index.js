@@ -10,7 +10,7 @@ import { logger } from './utils/logger.utils.js';
 
 import { errorMiddleware } from './middleware/error.middleware.js';
 
-const PORT = 8085;
+const PORT = 8080;
 
 // Create the express app
 const app = express();
