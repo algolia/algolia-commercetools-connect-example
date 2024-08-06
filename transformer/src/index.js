@@ -7,10 +7,13 @@ import ServiceRoutes from './routes/service.route.js';
 
 // Import logger
 import { logger } from './utils/logger.utils.js';
+import { readConfiguration } from './utils/config.utils.js';
 
 import { errorMiddleware } from './middleware/error.middleware.js';
 
-const PORT = 8080;
+const config = readConfiguration();
+
+const PORT = config.customPort || 8080;
 
 // Create the express app
 const app = express();
