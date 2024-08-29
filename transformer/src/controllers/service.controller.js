@@ -6,8 +6,8 @@ import { transform } from '../functions/transformer.js';
 
 /**
  * Exposed service endpoint.
- * - Receives a POST request with the variants to transform
- * and returns the transformed variants
+ * - Receives a POST request with the algoliaProducts to transform
+ * and returns the transformed algoliaProducts
  */
 export const post = async (request, response) => {
 
@@ -16,18 +16,18 @@ export const post = async (request, response) => {
   await validateToken(config, request.headers);
 
   if ( !request.body ) throw new CustomError(400, 'No request body found');
-  if ( typeof(request.body.variants) == 'undefined') throw new CustomError(400, 'No variants found to transform');
+  if ( typeof(request.body.algoliaProducts) == 'undefined') throw new CustomError(400, 'No algolia products found to transform');
 
-  const variants = request.body?.variants;
-  const newVariants = [];
+  const algoliaProducts = request.body?.algoliaProducts;
+  const newalgoliaProducts = [];
   
-  logger.info(`transforming ${variants.length} variants`);
-  for ( let i = 0;i < variants.length;i++ ) {
-    const newVariant = transform(variants[i]);
-    newVariants.push(newVariant);
+  logger.info(`transforming ${algoliaProducts.length} algoliaProducts`);
+  for ( let i = 0;i < algoliaProducts.length;i++ ) {
+    const newVariant = transform(algoliaProducts[i]);
+    newalgoliaProducts.push(newVariant);
   }
   const jsonResponse = {
-    variants: newVariants
+    algoliaProducts: newalgoliaProducts
   }
 
   apiSuccess(200, jsonResponse, response);

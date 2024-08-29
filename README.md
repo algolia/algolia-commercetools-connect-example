@@ -1,7 +1,7 @@
 # Description
 This is an extension service that is called from the [algolia-commercetools-connector](https://github.com/algolia/algolia-commercetools-connector)
 
-This is a commercetools connect app that has 1 app that's a service.  It's meant to be called remotely, passing in variants in order to transform them.
+This is a commercetools connect app that has 1 app that's a service.  It's meant to be called remotely, passing in algoliaProducts in order to transform them.
 
 # Connector Properties
 The connector has the following properties to add when deploying the connector or installing it locally.
@@ -16,7 +16,7 @@ All of the settings should match the settings in the [algolia-commercetools-conn
 | CTP_SCOPE     | commercetools Composable Commerce client scope, for example manage_project:[CTP_PROJECT_KEY] |
 
 ## Structure of the variant JSON
-The structure of the incoming list of variants is:
+The structure of the incoming list of algoliaProducts is:
 ```
 {
     "articleNumberManufacturer": "J21 12059 885",
